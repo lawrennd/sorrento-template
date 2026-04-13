@@ -1,0 +1,59 @@
+---
+layout: page
+title: Program
+---
+
+{% if site.conference.draft %}
+<p><strong>Draft version</strong></p>
+{% endif %}
+
+{{ content }}
+
+{% if page.programme_overview %}
+  {% assign programme_posts = site.posts | where: "programme_show", true | sort: "programme_order" %}
+  {% assign programme_extras = page.programme_extras | sort: "order" %}
+  {% assign note_after = page.programme_note_after_order | default: "" %}
+
+  {% for post in programme_posts %}
+    {% assign day_name = post.date | date: "%A" %}
+    {% assign row_date_time = post.programme_date_time | default: post.date | date: "%d %b" %}
+    {% assign row_date_time = day_name | append: " " | append: row_date_time %}
+    {% assign row_title = post.programme_title | default: post.title %}
+    {% assign next_post = programme_posts[forloop.index] %}
+    {% assign current_order = post.programme_order | default: "0" %}
+    {% assign next_order = "" %}
+    {% if next_post %}
+      {% assign next_order = next_post.programme_order | default: "" %}
+    {% endif %}
+
+  <p>
+    <strong>{{ row_date_time }}</strong><br>
+    <a href="{{ post.url | prepend: site.baseurl }}">{{ row_title }}</a>
+    {% if post.organizers %}
+    <br>Organisers: {% assign authors = post.organizers %}{% include listauthors.html details=true %}
+    {% endif %}
+  </p>
+
+    {% if page.programme_note and post.programme_order == note_after %}
+  <p><em>{{ page.programme_note }}</em></p>
+    {% endif %}
+
+    {% for row in programme_extras %}
+      {% assign row_order = row.order | default: "" %}
+      {% if row_order > current_order and (next_order == "" or row_order < next_order) %}
+        {% assign extra_date_time = row.date_time %}
+        {% if row.day %}
+          {% assign extra_date_time = row.day | append: " " | append: row.date_time %}
+        {% endif %}
+  <p>
+    <strong>{{ extra_date_time }}</strong><br>
+    {% if row.url %}
+      <a href="{{ row.url }}">{{ row.title }}</a>
+    {% else %}
+      {{ row.title }}
+    {% endif %}
+  </p>
+      {% endif %}
+    {% endfor %}
+  {% endfor %}
+{% endif %}

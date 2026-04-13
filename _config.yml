@@ -1,0 +1,123 @@
+# Replace all occurrences of XXXX with the meeting year (e.g. 2027).
+# Search for "XXXX" in this file to find every field that needs updating.
+
+# Site settings
+title: Sorrento Meeting
+subtitle: TBD  # XXXX: replace with the meeting theme/subtitle
+permalink: "/:title.html"
+description: > # this means to ignore newlines until "baseurl:"
+  This is the website of the Sorrento Meeting XXXX.
+baseurl: "/sorrentoXXXX" # XXXX: replace with the year, e.g. /sorrento2027
+
+# If you want to create a twitter account for your conference include
+# twitter name here
+twitter_username:
+
+github_username: lawrennd
+repository: lawrennd/sorrentoXXXX  # XXXX: replace with the year
+
+author:
+  name: Sorrento Meeting
+  # You might want to create an email for handling conference queries. If you do, enter it here.
+  email:  # XXXX: add organiser contact email, e.g. sorrento2027@gmail.com
+comments: false
+
+# Build settings
+markdown: kramdown
+plugins:
+- jekyll-feed
+- jekyll-seo-tag
+- jekyll-remote-theme
+# change encoding for the generated output files to utf-8
+encoding: utf-8
+exclude:
+- doc
+- vendor
+- vendor/bundle
+- .bundle
+- Gemfile
+- Gemfile.lock
+remote_theme: cabrerac/jekyll-theme-sorrento
+style: sorrento
+
+ghub:
+  edit: true
+  repository: sorrentoXXXX  # XXXX: replace with the year
+
+# Also generate pages with dates in the future
+future: true
+
+# Place a banner image in assets/images and give its name here.
+banner: sorrento.png
+
+conference:
+  draft: false
+  hide_tentative: false
+  full_name: Sorrento Meeting
+  short_name: Sorrento XXXX  # XXXX: replace with the year
+  name: The Sorrento Meeting
+  # set to True to hide tentative speakers
+  hide_tentative: true
+  # Place an image of venue in assets/images and give its name here
+  image: conference-venue.png
+  #proceedings:
+    # When proceedings are published add url here.
+    #url:
+    #show: false
+  # Give details of the room in the venue here.
+  room:
+  # Venue is fixed: Grand Hotel Vesuvio, Sorrento, Italy.
+  # Only update these if the meeting moves.
+  venue: Grand Hotel Vesuvio
+  venue_url: https://www.vesuviosorrento.com/
+  location: Sorrento, Italy
+  year: XXXX  # XXXX: replace with the year, e.g. 2027
+  # Give the instance of the conference here (e.g. 3rd)
+  instance:
+  # Give the individual days that the conference will be held on here.
+  # XXXX: update these dates for the meeting year.
+  # The meeting has historically been held in late March / early April.
+  dates:
+  - XXXX-MM-DD
+  - XXXX-MM-DD
+  - XXXX-MM-DD
+  # Give the submission site details here.
+  #submission:
+    # Whether to show the submission site.
+    #show: false
+    # The URL of the submission site.
+    #url:
+    # The name of the submission site (e.g. Microsoft CMT Website)
+    #name:
+  #deadlines:
+    # Fill in the key dates as below.
+    #- name: Submission server open
+    #  type: submission
+    #  date:
+    #- name: Abstract submission deadline
+    #  type: submission
+    #  date: XXXX-01-15
+    #- name: Author notification
+    #  date: XXXX-02-01
+    #  type: decision
+    #- name: Registration deadline
+    #  date:
+  # List program chairs and steering committee here.
+  # XXXX: replace with the actual organising committee for this year.
+  chairs:
+  - type: General Chairs
+    people:
+    - family:  # XXXX: family name
+      given:   # XXXX: given name
+      url:     # XXXX: personal web page
+      institute: University of Cambridge
+  - type: Steering Committee
+    people:
+    - given: Neil D.
+      family: Lawrence
+      url: "http://inverseprobability.com"
+      institute: University of Cambridge
+    - given: Jessica
+      family: Montgomery
+      url: https://www.ai.cam.ac.uk/people/jess-montgomery/
+      institute: University of Cambridge

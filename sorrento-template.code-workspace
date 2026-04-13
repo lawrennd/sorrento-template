@@ -1,0 +1,20 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "../sorrento2027"
+		},
+		{
+			"path": "../sorrento2026"
+		},
+		{
+			"path": "../sorrento2025"
+		},
+		{
+			"path": "../jekyll-theme"
+		}
+	],
+	"settings": {}
+}
