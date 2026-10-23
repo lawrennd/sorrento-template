@@ -1,3 +1,3 @@
 # Registration Provider
 
-For regisration you will need some way of taking payments. 
+For registration you will need some way of taking payments. 

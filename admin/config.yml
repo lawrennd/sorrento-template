@@ -1,0 +1,94 @@
+# XXXX: replace repo with this year's repository, e.g. lawrennd/sorrento2027
+backend:
+  name: github
+  repo: lawrennd/sorrentoXXXX
+  branch: main
+
+local_backend: true
+
+media_folder: assets/images
+public_folder: /assets/images
+
+collections:
+  - name: pages
+    label: Pages
+    files:
+      - label: About
+        name: about
+        file: index.html
+        fields:
+          - { label: Title, name: title, widget: string }
+          - { label: Layout, name: layout, widget: hidden, default: home }
+          - { label: Weight, name: weight, widget: number, default: 1 }
+          - { label: Body, name: body, widget: markdown }
+      - label: Registration
+        name: registration
+        file: registration.html
+        fields:
+          - { label: Title, name: title, widget: string }
+          - { label: Layout, name: layout, widget: hidden, default: default }
+          - { label: Weight, name: weight, widget: number, default: 3 }
+          - { label: Body, name: body, widget: markdown }
+      - label: Submissions
+        name: submissions
+        file: submission.html
+        fields:
+          - { label: Title, name: title, widget: string }
+          - { label: Layout, name: layout, widget: hidden, default: default }
+          - { label: Weight, name: weight, widget: number, default: 6 }
+          - { label: Body, name: body, widget: markdown }
+
+  - name: programme
+    label: Programme sessions
+    folder: _posts
+    create: true
+    slug: '{{year}}-{{month}}-{{day}}-{{slug}}'
+    extension: md
+    format: frontmatter
+    sortable_fields: ['programme_order', 'title']
+    fields:
+      - { label: Title, name: title, widget: string }
+      - { label: Tagline, name: tagline, widget: string, required: false }
+      - { label: Layout, name: layout, widget: hidden, default: singletrack }
+      - { label: Organiser URL, name: organizer_url, widget: string, required: false }
+      - label: Categories
+        name: categories
+        widget: list
+        default: ['sorrentoXXXX']
+      - { label: Show on programme, name: programme_show, widget: boolean, default: true }
+      - { label: Programme order, name: programme_order, widget: string, hint: 'Lower numbers appear first, e.g. 10, 20, 30' }
+      - { label: Programme date/time, name: programme_date_time, widget: string, hint: 'e.g. 22 Mar or 21 Mar 19:00' }
+      - { label: Programme title, name: programme_title, widget: string }
+      - { label: Room, name: room, widget: string, default: Turchese, required: false }
+      - { label: Show abstracts, name: show_abstracts, widget: boolean, default: true }
+      - label: Organisers
+        name: organizers
+        widget: list
+        required: false
+        fields:
+          - { label: Given name, name: given, widget: string }
+          - { label: Family name, name: family, widget: string }
+          - { label: URL, name: url, widget: string, required: false }
+          - { label: Institute, name: institute, widget: string, required: false }
+          - { label: Tentative, name: tentative, widget: boolean, required: false }
+      - label: Talks
+        name: talks
+        widget: list
+        required: false
+        fields:
+          - { label: Title, name: title, widget: string }
+          - { label: Start, name: start, widget: string, required: false }
+          - { label: End, name: end, widget: string, required: false }
+          - { label: Speaker, name: speaker, widget: string, required: false }
+          - label: Authors
+            name: author
+            widget: list
+            required: false
+            fields:
+              - { label: Given name, name: given, widget: string, required: false }
+              - { label: Family name, name: family, widget: string, required: false }
+              - { label: Affiliation, name: affiliation, widget: string, required: false }
+              - { label: Institute, name: institute, widget: string, required: false }
+              - { label: Tentative, name: tentative, widget: boolean, required: false }
+          - { label: Abstract, name: abstract, widget: markdown, required: false }
+      - { label: Body, name: body, widget: markdown, required: false }

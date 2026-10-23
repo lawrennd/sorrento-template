@@ -16,9 +16,10 @@ conference:
   - YYYY-MM-DD
   - YYYY-MM-DD
   - YYYY-MM-DD
+  - YYYY-MM-DD   # include the Sunday welcome day when it is part of the advertised dates
 ```
 
-Include each day the meeting will run. They are used by the theme when generating the programme.
+Include each day the meeting will run. They are used by the theme when generating the programme. The 2027 meeting is Sunday to Wednesday (21–24 March).
 
 Note the use of [ISO standard date format](https://en.wikipedia.org/wiki/ISO_8601) — as an international meeting we use international dates.
 
