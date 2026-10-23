@@ -14,11 +14,12 @@ When each of these is done you can cross them off using ~~two tildes for strike 
    1. If you have created a social media account, add it to [`_config.yml`](../_config.yml).
 6. First pass budget.
 7. Finalise invited speakers and add them to the programme posts in `_posts/`.
-8. Select a [registration provider](./registration.md) and add the link to [`registration.html`](../registration.html).
-9. If running a call for abstracts, set the key dates in [`_config.yml`](../_config.yml) and update [`submission.html`](../submission.html).
-10. Receive and review submitted abstracts.
-11. Make accept/reject decisions.
-12. Publicise decisions.
-13. [Finalise the programme](./schedule.md) — add/update `_posts/` files.
-14. Confirm conference dinner details and update `programme_extras` in [`program.html`](../program.html).
-15. Attend the meeting!
+8. Point `admin/config.yml` at this year's GitHub repo and try the [Decap admin](./decap.md) locally.
+9. Select a [registration provider](./registration.md) and add the link to [`registration.html`](../registration.html).
+10. If running a call for abstracts, set the key dates in [`_config.yml`](../_config.yml) and update [`submission.html`](../submission.html).
+11. Receive and review submitted abstracts.
+12. Make accept/reject decisions.
+13. Publicise decisions.
+14. [Finalise the programme](./schedule.md) — add/update `_posts/` files.
+15. Confirm conference dinner details and update `programme_extras` in [`program.html`](../program.html).
+16. Attend the meeting!

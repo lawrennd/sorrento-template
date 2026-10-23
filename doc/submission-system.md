@@ -27,4 +27,4 @@ conference:
     name: 
 ```
 
-That will auto generate some text in the `submit.html` page. You can fill in details around submission on that page and it will appear below. 
+That will auto generate some text on the `submission.html` page. You can fill in details around submission on that page and it will appear below. 
